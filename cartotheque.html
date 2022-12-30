@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexico | Cartothèque</title>
+    <link rel="icon" href="assets/img/p8_icon.jpg">
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css crossorigin="anonymous">
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet-src.min.js' integrity='sha512-nRcCZolw4mA+OKrTG/baePuVcG7PHhjFhl6pxkLYl2T+3pKEf+vXw0uR1/X3YtlPLXoWiaLjBnuUzpDuB1yXNg==' crossorigin='anonymous'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.min.css' integrity='sha512-KJRB1wUfcipHY35z9dEE+Jqd+pGCuQ2JMZmQPAjwPjXuzz9oL1pZm2cd79vyUgHQxvb9sFQ6f05DIz0IqcG1Jw==' crossorigin='anonymous'/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js' integrity='sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==' crossorigin='anonymous'></script>
+
+    <link rel="stylesheet" href=assets/css/cartotheque.css>
+
+    <!------------------GeoJSONs------------->
+    <script src='datas/ENT.js'></script>
+    <script src='datas/MUN.js'></script>
+    <script src='datas/LOC.js'></script>
+    <script src='datas/AGEB.js'></script>
+    <script src='datas/MAN.js'></script>
+
+
+</head>
+<body>
+    <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/logo.png" alt="" width="250px" height="50px" class="d-inline-block align-text-top">
+        </a>
+     
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" aria-current="page" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="statistiques.html">Statistiques</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="cartotheque.html">Cartothèque</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="rapport.html">Rapport</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- IMG Grid  -->
+  
+
+
+
+
+
+
+<!----------------------------------- Triggers --------------------------------------->
+  <div class="row body-container">
+    <div class="col-sm-5">
+      <div id="map" class="map"></div>
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-8 col-sm-6 mapImg-container" data-bs-toggle="modal" data-bs-target="#carte1">
+            <div class="image" data-content="Carte de vol">
+              <img src="./images/vol.png" class="img-maps">
+            </div>
+        </div>
+        <div class="col-4 col-sm-6 mapImg-container" data-bs-toggle="modal" data-bs-target="#carte2">
+          <div class="image" data-content="Carte d'homicides">
+            <img src="./images/vol.png" class="img-maps">
+          </div>
+        </div>
+        <div class="col-8 col-sm-6 mapImg-container" data-bs-toggle="modal" data-bs-target="#carte3">
+          <div class="image" data-content="Carte de feminicides">
+            <img src="./images/vol.png" class="img-maps">
+          </div>
+        </div>
+        <div class="col-4 col-sm-6 mapImg-container" data-bs-toggle="modal" data-bs-target="#carte4">
+          <div class="image" data-content="Carte de densité" >
+            <img src="./images/vol.png" class="img-maps">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!----------------------------------- Modals --------------------------------------->
+  <!----- Carte 1 ------>
+  <div class="modal fade" id="carte1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title 1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row justify-content-center">
+                <div class="modal-img col-6">
+                    <img src="./images/vol.png" class="img-modal"/>
+                </div>
+                <div class="modal-txt col-4">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, 
+                        remaining essentially unchanged. 
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!----- Carte 2 ------>
+  <div class="modal fade" id="carte2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title 2</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row justify-content-center">
+                <div class="modal-img col-6">
+                    <img src="./images/vol.png" class="img-modal"/>
+                </div>
+                <div class="modal-txt col-4">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, 
+                        remaining essentially unchanged. 
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!----- Carte 3 ------>
+  <div class="modal fade" id="carte3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title 3</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row justify-content-center">
+                <div class="modal-img col-6">
+                    <img src="./images/vol.png" class="img-modal"/>
+                </div>
+                <div class="modal-txt col-4">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, 
+                        remaining essentially unchanged. 
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!----- Carte 4 ------>
+  <div class="modal fade" id="carte4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title 4</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row justify-content-center">
+                <div class="modal-img col-6">
+                    <img src="./images/vol.png" class="img-modal"/>
+                </div>
+                <div class="modal-txt col-4">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, 
+                        remaining essentially unchanged. 
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar footer">
+    <div class="container-fluid  d-flex justify-content-center">
+        &copy;&nbsp <strong><span>M.Enora  </strong>&nbsp | &nbsp  <strong>I.Gérard</strong>  &nbsp  | &nbsp  <strong>L.Marion</strong>  &nbsp | &nbsp  <strong>K.Yasmine </span></strong>
+    </div>
+  </nav>
+
+
+
+  <script>
+    /*******************CARTE**********************/
+    var map = L.map('map').setView([19.43, -99.09], 10); 
+
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+    }).addTo(map);
+
+    let baselayers = {
+      OSM: L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'),
+      ESRI_Monochrome: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'),
+      ESRI_orthophoto: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
+    };
+
+    function onEachFeatureENT(feature, layer) {
+        layer.bindPopup(feature.properties.NOMGEO);
+    }
+    function onEachFeatureMUN(feature, layer) {
+      layer.bindPopup(feature.properties.NOMGEO);
+    }
+
+    function onEachFeatureLOC(feature, layer) {
+      layer.bindPopup(feature.properties.NOMGEO);
+    }
+
+
+    function onEachFeatureAGEB(feature, layer) {
+        layer.bindPopup(feature.properties.NOMGEO);
+    }
+
+    function onEachFeatureMAN(feature, layer) {
+      layer.bindPopup(feature.properties.NOMGEO);
+    }
+    
+    var styleENT = {
+      "color": "#ff7800",
+      "weight": 5,
+      "opacity": 0.65
+    };
+
+    var styleMUN = {
+      "color": "#4b875a",
+      "weight": 5,
+      "opacity": 0.65
+    };
+
+    var styleLOC = {
+      "color": "#434ea0",
+      "weight": 5,
+      "opacity": 0.65
+    };
+
+    var styleAGEB = {
+      "color": "#9543a0",
+      "weight": 5,
+      "opacity": 0.65
+    };
+
+    var styleMAN = {
+      "color": "#f21d47",
+      "weight": 5,
+      "opacity": 0.65
+    };
+
+    var ent = L.geoJson(entidad, {
+      style: styleENT,
+      onEachFeature: onEachFeatureENT}).addTo(map);
+    map.fitBounds(ent.getBounds());
+
+    var mun = L.geoJson(municipios, {
+      style: styleMUN,
+      onEachFeature: onEachFeatureMUN});
+
+    var loc = L.geoJson(localidad, {
+      style: styleLOC,
+      onEachFeature: onEachFeatureLOC});
+
+    var ageb = L.geoJson(AGEB, {
+      style: styleAGEB,
+      onEachFeature: onEachFeatureAGEB});
+
+    var man = L.geoJson(MANZ, {
+      style: styleMAN,
+      onEachFeature: onEachFeatureMAN});
+ 
+
+    var overlayMaps = {
+      "Entités fédératives": ent,
+    };
+
+    var layerControl = L.control.layers(baselayers, overlayMaps).addTo(map); 
+  
+    layerControl.addOverlay(mun, "Municipalités");
+    layerControl.addOverlay(loc, "Localités");
+    layerControl.addOverlay(ageb, "Quartiers");
+    layerControl.addOverlay(man, "Pathés de maison");
+
+
+  </script>
+
+
+</body>
+
+</html>
