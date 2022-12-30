@@ -1,0 +1,250 @@
+
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@font-face {
+    font-family: "Righteous";
+    src: url("../fonts/BalooChettan-Regular.ttf");
+    src: url("../fonts/BalooChettan-Regular.ttf");
+}
+
+/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box !important;
+    transition: ease all 0.5s;
+}
+
+html, body {
+    margin: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    scroll-behavior: smooth
+}
+
+body {
+    font-size: 14px;
+    background-color: #e8e8e8;
+    line-height: 1.80857;
+    font-weight: normal;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, 
+body {
+    height: 100%;
+}
+
+strong{
+    font-weight: bold;
+}
+h1 {
+    letter-spacing: 0;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: normal;
+    line-height: normal;
+    color: #111111;
+    margin: 0
+}
+
+h1 {
+    font-size: 24px
+}
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #212121;
+    text-decoration: none!important;
+    opacity: 1
+}
+
+p {
+    margin: 20px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* header section start */
+
+.header_section {
+    width: 100%;
+    float: left;
+    height: auto;
+    background-size: 100%;
+    background: url(../img/mexico.jpg) no-repeat center center fixed; 
+    height: 94%;
+    padding: 0px 0px 20px 0px;
+    margin-bottom: 5%;
+}
+
+.logo {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding: 20px 0px 50px 0px;
+}
+
+.logo-img{
+    width: 130px;
+    height: 80px;
+}
+
+.logo_mobile {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.mobile_menu {
+    width: 100%;
+    float: left;
+    display: none;
+}
+
+
+.menu_main li {
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menu_main li a {
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.menu_main li a:hover {
+    color: black;
+}
+
+.mb-lg-0,
+.my-lg-0 {
+    margin-bottom: 0!important;
+    width: 20%;
+    float: left;
+}
+
+.header_main {
+    width: 100%;
+    background-size: 100%;
+    padding: 10px 0px 0px 0px;
+}
+
+
+/* header section end */
+
+
+/* banner section start */
+
+.banner_section {
+    width: 100%;
+    float: left;
+}
+
+.banner_text {
+    width: 63%;
+    margin: 0 auto;
+    font-size: 60px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.subtitle{
+    font-size: 20px;
+}
+
+.problematique{
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.5em;
+}
+
+/*Header arrow*/
+.arrow-link{
+    display: block;
+}
+
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 50px;
+}
+
+.arrows path {
+	stroke: #e4edf2;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+
+
+/* Footer */
+
+nav{
+    background: rgba( 164, 160, 160, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
