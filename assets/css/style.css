@@ -41,7 +41,7 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
-  margin-top: 60px;
+  margin-top: 70px;
   padding: 20px 30px;
   transition: all 0.3s;
 }
@@ -407,7 +407,7 @@ h6 {
   font-size: 32px;
   padding-left: 10px;
   cursor: pointer;
-  color: #a7451b;
+  color: #E5292C
 }
 
 .header .search-bar {
@@ -713,7 +713,7 @@ h6 {
 .sidebar-nav .nav-link i {
   font-size: 16px;
   margin-right: 10px;
-  color: #a7451b;
+  color: #E5292C
 }
 
 .sidebar-nav .nav-link.collapsed {
@@ -726,7 +726,7 @@ h6 {
 }
 
 .sidebar-nav .nav-link:hover {
-  color: #a7451b;
+  color: #E5292C;
   background: #121212;
 }
 
@@ -754,7 +754,7 @@ h6 {
   align-items: center;
   font-size: 14px;
   font-weight: 600;
-  color: #aab7cf;
+  color: #E5292C;
   transition: 0.3;
   padding: 10px 0 10px 40px;
   transition: 0.3s;
@@ -769,11 +769,11 @@ h6 {
 
 .sidebar-nav .nav-content a:hover,
 .sidebar-nav .nav-content a.active {
-  color: #a7451b;
+  color: #aab7cf;
 }
 
 .sidebar-nav .nav-content a.active i {
-  background-color: #aab7cf;
+  background-color: #E5292C;
 }
 
 /*--------------------------------------------------------------
@@ -1260,4 +1260,13 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+.activity-content{
+  color: lightslategray;
+}
+
+.activity-title{
+  color: white;
+  font-size: 15px;
 }

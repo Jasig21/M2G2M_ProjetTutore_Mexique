@@ -722,7 +722,7 @@
   }
   
   .sidebar-nav .nav-link:hover {
-    color: #a7451b;
+    color: #EF2A2D;
 
   }
   
@@ -765,7 +765,7 @@
   
   .sidebar-nav .nav-content a:hover,
   .sidebar-nav .nav-content a.active {
-    color: #a7451b;
+    color: #EF2A2D;
   }
   
   .sidebar-nav .nav-content a.active i {
@@ -773,7 +773,7 @@
   }
 
 .pdf-container{
-    margin-left: 25%;
+    margin-left: 23%;
     margin-top: 8%;
 }
 
@@ -842,3 +842,26 @@ p{
      transform: translateY(0%);
     }
    }
+
+
+  .texte{
+  text-align: justify;
+  }
+
+  .source{
+    font-size: 15px;
+  }
+
+  a{
+    color: #EF2A2D;
+  }
+
+  .source{
+    position: fixed;
+    margin-right: 5%;
+  }
+
+  .bibliographie{
+    position: fixed;
+
+  }
