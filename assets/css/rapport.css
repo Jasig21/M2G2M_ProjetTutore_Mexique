@@ -16,6 +16,7 @@
     font-family: "Open Sans", sans-serif;
     background: #1e1d1d;
     color: #444444;
+    overflow-x: hidden;
   }
   
   a {
