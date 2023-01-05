@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mexico | Cartothèque</title>
+    <title>Mexico | Rapport</title>
     <link rel="icon" href="assets/img/p8_icon.jpg">
     <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css crossorigin="anonymous">
     <script src=https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js></script>
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/css/rapport.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css' integrity='sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg==' crossorigin='anonymous'/>    <link href="assets/css/rapport.css" rel="stylesheet">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js' integrity='sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==' crossorigin='anonymous'></script>
 
 </head>
@@ -19,6 +17,9 @@
     <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="d-flex align-items-center justify-content-between">
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="assets/img/logo.png" alt="" width="250px" height="50px" class="d-inline-block align-text-top">
@@ -56,43 +57,63 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="rapport.html">
           <span>I. Données</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
-                <span>I.1. Source</span>
+            <a href="rapport.html#donnees_spatiales">
+                <span>I.1. Données spatiales</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
-                <span>I.2. Pré-traitements</span>
+            <a href="rapport.html#donnees_sociodemo">
+                <span>I.2. Données sociodémographques</span>
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
-                <span>I.3. Hypothèses et démarche envisagée</span>
+            <a href="rapport.html#donnees_crime">
+                <span>I.3. Données "criminalité"</span>
             </a>
           </li>
         </ul>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link " href="statistiques.html">
-          <span>II. Analyse sociodémographique</span>
+        <a class="nav-link " href="rapport.html#cadre">
+          <span>II. Cadre géographique et chronologique de l'étude</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="statistiques.html">
-          <span>III. Analyse criminalité</span>
+        <a class="nav-link " href="rapport.html#tech">
+          <span>III. Technologies employées</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="rapport.html">
+          <span>IV. Exploitation des données</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+            <a href="rapport.html#choix_sociodemo">
+                <span>IV.1. Choix des variables sociodémographques</span>
+            </a>
+          </li>
+          <li>
+            <a href="rapport.html#choix_crime">
+                <span>IV.2. choix des variables "criminalité"</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+
+
+
+      <li class="nav-item">
         <a class="nav-link " href="statistiques.html">
-          <span>IV. Analyse jointe</span>
+          <span>IV. Exploitation des données</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
@@ -141,55 +162,254 @@
 
 
   <div class="row pdf-container justify-content-around">
-    <div class="col-md-8 text-justify">
-      <h1>Introduction</h1>
-        <p class="texte intro">Mégapole macro céphalique par ses dimensions, métropole d’ordres national et mondial
-          concentrant les fonctions de commandement et d’organisation économiques et logistiques du pays,
-          également siège des institutions politiques, et pôle majeur en termes d’offre culturelle et
-          universitaire du Mexique dont elle est la capitale, Mexico dispose d’un poids écrasant sur son
-          territoire national.</p>
-          <p class="texte intro">Au sens administratif du terme, Ciudad de Mexico correspond en réalité uniquement au « District
-          Fédéral », siège des pouvoirs fédéraux, et compte 9 millions d’habitants.
-          Mais son agglomération dépasse largement cette limite en s’étendant vers les Etats fédérés
-          limitrophes de Mexico et d’Hidalgo, pour former la « Zone Urbaine de la Vallée de Mexico » : la
-          ZMVM.</p>
-          <p class="texte intro">De fait, au sein d’un tissu de villes plutôt déséquilibré en sa faveur, l’aire métropolitaine de Mexico,
-          avec ses 22 millions d’habitants, pèse 18% de la population du pays, et représente 25% du PIB
-          mexicain.</p>
-          <p class="texte intro">Or en dépit de cette concentration de l’activité et de son dynamisme économique qui, outre ses
-          orientations sociétales et politiques progressistes la distinguent du reste du pays, la ZMVM n’en
-          demeure pas moins un miroir du Mexique, le reflet d’une société inégalitaire, traversée par de fortes
-          tensions sociales : en 2000, plus de 60% des actifs de l’agglomération gagnaient 200 euros par mois ;
-          et en 2010, 40% de sa population ne bénéficiait d’aucune couverture sociale, malgré les programmes
-          sociaux étatiques (données INEGI).</p>
-          <p class="texte intro">La diversité sociale du Mexique et ses écarts importants de richesse s’y incarnent spatialement dans
-          une forte différenciation entre ses beaux quartiers de l’ouest, et ses périphéries populaires de l’est et
-          du nord.</p>
-          <p class="texte intro">Si l’agglomération reste épargnée par les règlements de compte entre groupes de narcotrafiquants
-          qui endeuillent le pays depuis plusieurs décennies, l’insécurité y est élevée malgré la présence
-          policière élevée. Son contexte demeure marqué par une forte délinquance : selon les chiffres du
-          bureau du Procureur général de justice du District Fédéral, le taux de délits rapportés aux autorités a
-          quasiment doublé entre 1990 et 1998, passant de 1412 à 2951 pour 100000 habitants [1].</p>
-          <p class="texte intro">Aussi, le diagnostic des enjeux de précarité et de criminalité, leur inscription dans l’espace de la
-          ZMVM, l’analyse de la structure spatiale de ces phénomènes peuvent offrir diverses perspectives
-          d’intérêt : à travers quelle implantation géographique se manifestent ces phénomènes ? Pour quelles
-          formes et quelles concentrations de la précarité et de la criminalité ? Quelles sont les
-          caractéristiques des populations résidentes concernées ?
-          Peut-on, en somme, établir et démontrer, pour le périmètre de l’aire métropolitaine de Mexico, un
-          lien entre conditions de précarité et faits criminels ? C’est l’objet de la présente étude.
-          </p>
+    <div class="col-md-8 text-justify corps">
+      <div class="introduction">
+        <h2>INTRODUCTION</h2>
+        <p class="texte intro">Mégapole macro-céphalique par ses dimensions, métropole d’ordres national et mondial concentrant les fonctions de commandement 
+          et d’organisation économiques et logistiques du pays, également siège des institutions politiques, et pôle majeur en termes d’offre culturelle et universitaire 
+          du Mexique dont elle est la capitale, Mexico dispose d’un poids écrasant sur son territoire national.</p>
+
+        <p class="texte intro">Au sens administratif du terme, Ciudad de Mexico correspond en réalité uniquement au « District Fédéral », siège des pouvoirs fédéraux, 
+          et compte 9 millions d’habitants. </p>
+
+        <p class="texte intro">Mais son agglomération dépasse largement cette limite en s’étendant vers les Etats fédérés limitrophes de Mexico et d’Hidalgo, pour former 
+          la « Zone Urbaine de la Vallée de Mexico » :  la ZMVM. </p>
+
+        <p class="texte intro">De fait, au sein d’un système urbain plutôt déséquilibré en sa faveur, l’aire métropolitaine de Mexico, avec ses 22 millions d’habitants, 
+          pèse 18% de la population du pays, et représente 25% du PIB mexicain [1].</p>
+
+        <p class="texte intro">Or en dépit de cette concentration de l’activité et de son dynamisme économique qui, outre ses orientations sociétales et politiques progressistes, 
+          la distinguent du reste du pays, la ZMVM n’en demeure pas moins un miroir du Mexique, le reflet d’une société inégalitaire, traversée par de fortes tensions sociales : 
+          en 2000, plus de 60% des actifs de l’agglomération gagnaient 200 euros par mois [2] ; et en 2010, 40% de sa population ne bénéficiait d’aucune couverture sociale, 
+          malgré les programmes sociaux étatiques [3]. Dans certaines municipalités périphériques, cette proportion s’élève à plus des deux tiers de la population [4].</p>
+
+        <p class="texte intro">Si l’agglomération reste épargnée par les règlements de compte entre groupes de narcotrafiquants qui endeuillent le pays depuis plusieurs décennies, 
+          l’insécurité y est élevée malgré l’importante présence policière. Son contexte demeure marqué par une forte délinquance : selon les chiffres du bureau du Procureur général 
+          de justice du District Fédéral, le taux de délits rapportés aux autorités a quasiment doublé entre 1990 et 1998, passant de 1412 à 2951 pour 100 000 habitants [2], 
+          et l’on y recense 65000 vols et 2000 homicides par an (dont 40% ne sont pas déclarés) [1].</p>
+
+        <p class="texte intro">Si l’agglomération reste épargnée par les règlements de compte entre groupes de narcotrafiquants qui endeuillent le pays depuis plusieurs décennies, 
+          l’insécurité y est élevée malgré l’importante présence policière. Son contexte demeure marqué par une forte délinquance : selon les chiffres du bureau du Procureur général de justice du District Fédéral, 
+          le taux de délits rapportés aux autorités a quasiment doublé entre 1990 et 1998, passant de 1412 à 2951 pour 100 000 habitants [2], et l’on y recense 65000 vols et 2000 homicides par an (dont 40% ne sont pas déclarés) [1].
+        </p>
+
+        <p class="texte intro">Peut-on, en somme, établir et démontrer, pour le périmètre de l’aire métropolitaine de Mexico, un lien entre conditions de précarité et faits criminels ? C’est l’objet de la présente étude.</p>
+      </div>
+
+      <br id="donnees_spatiales">
+      <br>
+      <div class="donnees">
+        <h2>I. DONNÉES</h2>
+        <p class="texte intro">La conduite de notre projet s’est appuyée sur trois jeux de données : </p>
+
+        <h4>I.1. Données spatiales</h4>
+        <p class="texte intro">Il s’agit des shapefiles correspondant aux différents échelons du découpage administratif en vigueur au Mexique (localidad, municipe…), 
+          et aux unités statistiques (ageb, manzanas) élaborées par l’Instituto Nacional de Estadistica y Geografia (l’Institut national de statistiques 
+          et de géographie du Mexique), ou INEGI.</p>
+
+        <p class="texte intro">Créé en 1983, l’INEGI est un organisme public autonome chargé de réglementer et de coordonner le système national d’information statistique et géographique. 
+          Il réalise tous les dix ans des recensements de la population et publie mensuellement des statistiques économiques. </p>
+
+        <p class="texte intro" id="donnees_sociodemo">Pour rappel, notre aire d’étude est la ZMVM, unité statistique de l’INEGI. Indisponible sur le site de l’institut, nous avons construit cette couche à partir des échelons précités. </p>
+        
+        <br>
+
+        <h4 class="biblio">Découpage administratif du Méxique</h4>
+        <img src="assets/img/echelon_geo.png" class="img-stats">
+
+
+
+        <br>
+        <br>
+        <br>
+        <h4>I.2. Données socio-démographiques</h4>
+        <p class="texte intro">Elles se répartissent en 9 fichiers Excel, mis à disposition par ce même INEGI, et sont issues du recensement décennal de 2020. Elles sont regroupées au sein de deux bases :</p>
+
+        <ul class="points">
+          <li>
+          	La base « Personas » et « Viviendas », dite « échantillon détaillé », portant information des personnes et des logements (correspondant aux ménages) ; une clé fait le lien entre les individus constitutifs d’un ménage. 
+          </li>
+
+          <li>
+            La base dite « agrégée » fournit les mêmes informations, mais transformées et agrégées aux différents échelons géographiques, et par tranche d’âge.
+          </li>
+        </ul>
+
+        <p class="texte intro">D’un point de vue structurel, chaque observation y est décrite par un volume conséquent de variables (près d’une centaine pour chacun des recensements) regroupées au sein d’ensembles thématiques :</p>
+        <ul class="points">
+          <li>Caractéristiques du logement occupé (niveau d’équipement, accès aux TIC, composition du foyer et structure des revenus…), </li>
+          <li>Des personnes (niveau d’étude, activité, travail, mobilités, couverture sociale, statut marital…),</li>
+          <li id="donnees_crime">Alimentation,</li>
+          <li>Finances,</li>
+          <li>Religion, </li>
+          <li>Etc.</li>
+        </ul>
+
+        <br>
+        <h4>I.3. Données criminalité</h4>
+        <p class="texte intro">Enfin, les données relatives au fait criminel, qui se situent en fait dans le prolongement des données sociodémographiques.</p>
+
+        <p class="texte intro">Notre réflexion sur ce matériau, dans le cadre du Mexique, s’est appuyée sur le site elcri.men [5], réalisé par M. Diego Valle-Jones.  </p>
+
+        <p class="texte intro">Le data scientist mexicain y croise les données du Secretariado Ejecutivo del Sistema Nacional de Seguridad Publica – Secrétariat Exécutif du Système National de Sécurité Publique - (SESNSP), 
+          et celles de l’INEGI sur la totalité des municipes du Mexique, selon une typologie de crimes, et à travers une présentation statistique de leur évolution. L’intérêt de sa démarche réside dans le recul critique qu’il adopte vis-à-vis des données officielles. </p>
+
+        <p class="texte intro">Il a inspiré nos recherches bibliographiques et nous a orientés vers les données que nous évoquerons à la rubrique « Exploitation des données de criminalité : choix des variables ». </p>
+
+        <p class="texte intro">Mais auparavant, posons cette brève définition de la criminalité dans le Droit français :  elle est l’ensemble des actes illégaux, délictueux et criminels, commis dans un milieu donné, à une époque donnée, 
+          et correspond à la transgression des normes juridiques d’un système social [6]. </p>
+
+        <p class="texte intro">La notion de crime, et donc de criminalité, relèvent par conséquent d’une norme à la fois objective et subjective. Aussi, afin d’éviter les généralisations abusives relevant de notre propre système normatif et culturel, 
+          et suivant les recommandations de M. Valette, nous avons choisi d’exploiter les deux jeux suivants: </p>
+
+        <br id="donnees_spatiales">
+        <h5>a.	La base de données « Crime »</h5>
+        <p class="texte intro">Établie par M. Valette, elle recense, sur les trois dernières décennies, le nombre annuel d’homicides et de féminicides, ainsi que la population totale par genre et par municipalité. Elle prend sa source à l’INEGI et se présente au format Excel.</p>
+
+        <br>
+        <h5>b.	Les données gouvernementales</h5>
+        <p class="texte intro">Elles proviennent du SESNSP, sous forme de fichiers Excel annuels, consolidés lors de leur mise à jour [7].
+          La fréquence des crimes y est renseignée mensuellement, pour chaque municipalité de l’agglomération, et leur description répond à une typologie détaillée. Ainsi, 40 types de crime sont recensés, et chacun d’eux y est catégorisé par :
+        </p>
+
+        <ul class="points">
+          <li>La nature du préjudice subi : atteinte aux biens, atteinte à l’intégrité corporelle, violences familiales, etc. </li>
+          <li>Son type : homicide, séquestration, extorsion, braquage, vol, droit commun, etc. </li>
+          <li>Un sous-type : volontaire/involontaire, lieu du crime, etc.</li>
+          <li>Sa modalité : arme blanche/arme à feu, avec/sans violence, véhiculé ou non, etc.</li>
+        </ul>
+        <p class="texte intro"  id="cadre">Nos analyses se sont préalablement appuyées sur cette catégorisation.</p>
+
+        <br>
+        <br>
+        <h1>II. CADRES GÉOGRAPHIQUE ET CHRONOLOGIQUE DE L’ÉTUDE</h2>
+        <p class="texte intro">Elle porte sur la Zone métropolitaine de la vallée de Mexico, pour l’année 2020 (dernier recensement en date établi par l’INEGI), 
+          à l’échelle des Municipes (équivalent des communes françaises en termes de superficie).</p>
+
+        <p class="texte intro">Ce choix repose sur la disponibilité des données, cet échelon étant le plus fin et le plus documenté dans les données criminelles à notre disposition. </p>
+
+        <p class="texte intro">Composée de trois entités fédératives – Mexico, le District Fédéral et Hidalgo -, la ZMVM compte 76 municipes.  </p>
+
+        <p class="texte intro"  id="tech">Précisons enfin que les données « Crime » utilisées sont celles de 2019, soit un an avant l’épidémie de Covid, 
+          afin de disposer d’une photographie qui ne soit pas altérée par le caractère exceptionnel de la situation sanitaire de 2020.</p>
+        
+        <br>
+        <br>
+        <img src="assets/img/localisation.png" class="loc-map">
+        
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h2>III. TECHNOLOGIES EMPLOYÉES </h2>
+        <p class="texte intro">Notre travail couvrant à la fois les aspects de documentation et de développement, de récupération et de traitement de données, de production et de représentation de l’information, 
+          dans le cadre d’une gestion de projet, nous nous sommes appuyés sur les technologies suivantes :</p>
+
+        <br>
+        <br>
+        <img src="assets/img/localisation.png" class="loc-map">
+        <br>
+        <br>
+
+        <br id="choix_sociodemo">
+        <br>
+        <h2>IV. EXPLOITATION DES DONNÉES</h2>
+        <h4>IV.1. Données socio-démographiques: choix des variables</h4>
+        <p class="texte intro">Nous avons choisi dans l’exploration des données socio-démographiques de nous focaliser sur la géographie de la précarité. 
+          Ce choix prend sa source dans nos recherches sur la criminalité, qui indiquent un lien entre précarité et criminalité.
+          Ainsi, préalablement au choix de nos variables dans les bases étendues et agrégées, on s’est attaché à définir notre thématique de précarité.
+        </p>
+
+        <br>
+        <h5>a.	Définition de la précarité</h5>
+        <p class="texte intro">« État, caractère de ce qui est précaire. » [8] [9]</p>
+
+        <p class="texte intro">Au regard de cette définition peu éclairante, il nous a paru opportun d’approcher le terme par trois synonymes (proposés par le Larousse et le Petit Robert), plus expressifs : </p>
+
+        <ul class="points">
+          <li>o	L’instabilité, qui s’oppose à la stabilité d’une situation. On entend ici que la pauvreté ne peut être considérée comme un critère de précarité à elle seule. Suivant cette idée, un individu disposant 
+            d’un revenu faible mais stable, bénéficie d’une situation moins précaire qu’un individu disposant d’un salaire plus élevé, mais soumis à des aléas de santé, financiers, etc. ;</li>
+          <li>o	La fragilité désigne l’incapacité ou la faible capacité d’un individu à résister à cet aléa. Ici, cette fragilité peut être d’ordre économique comme sanitaire ;</li>
+          <li>o	L’incertitude, enfin, est liée à cette notion de fragilité. Outre la difficulté de répondre à une situation difficile, elle convoque l’incapacité d’anticiper les événements et donc de savoir comment y répondre lorsque ceux-ci surviennent.</li>
+        </ul>
+
+        <p class="texte intro">Dans son article « Construire un indicateur de précarité : les étapes d’une démarche empirique », où la notion ne comptait pour synonymes que l’instabilité et la fragilité, André Villeneuve notait en 1984 : « Les deux sens sont bien distincts, mais non opposés : 
+          l’instabilité implique des hauts et des bas, et les bas sont a priori des occasions de fragilité » [10]. </p>
+
+        <p class="texte intro">De fait, la précarité ne repose pas uniquement sur la pauvreté. Celle-ci en est une composante, mais ne l’explique pas entièrement. En conséquence, elle ne constituera pas le facteur déterminant de notre étude. </p>
+
+        <br>
+        <h5>b.	Élaboration d’un indice de précarité</h5>
+        <p class="texte intro">C’est donc à partir de cette conception de la précarité que nous avons envisagé la construction d’un indice (de cette précarité), sur la base des données socio-démographiques de l’INEGI.</p>
+
+        <p class="texte intro">La littérature consultée fait état de biais et de malfaçons que nous avons essayé d’éviter dans notre démarche, inédite pour les membres de notre groupe.  </p>
+
+        <p class="texte intro">Afin de ne pas s’enfermer dans une thématique de la précarité en particulier, notre travail a donc consisté, à partir des 350 variables de l’INEGI, à composer un bouquet cohérent de variables issues de diverses thématiques, avec pour objectif d’en étudier l’éventuelle porosité/contagiosité. </p>
+
+        <p class="texte intro">Aussi, les critères retenus pour sélectionner les variables les plus représentatives possibles ont reposé sur : </p>
+
+        <ul class="points">
+          <li>Une fréquence significative (ce qui est le cas des variables de l’INEGI) ;</li>
+          <li>-	Une corrélation forte avec d’autres variables issues de chacune des thématiques des données fournies par l’Institut.</li>
+        </ul>
+
+        <p class="texte intro">Enfin, nous avons décidé de conserver uniquement les données que nous estimions objectives. Ce critère exclut de fait certaines variables qui, de prime abord, semblaient intéressantes. Par exemple : « les interrogés considèrent-ils manger à leur faim ou non ?». </p>
+        
+        <p class="texte intro">Nos variables choisies parmi ces thématiques pour l’indice de précarité sont regroupées dans le schéma ci-dessous.  </p>
+
+
+        <br id="choix_crime">
+        <br>
+        <h4>IV.2. Données de criminalité : choix des variables</h4>
+        <p class="texte intro">Nous nous sommes affranchis de la granularité très fine des données publiées par le gouvernement mexicain (préjudice > type > sous-type > modalité) en nous arrêtant aux types seuls pour nous concentrer sur une palette plus générique. </p>
+
+        <p class="texte intro">Ainsi, après une étude de leur distribution, nous avons choisi de conserver tout type dont la part est supérieure à 5% du total de la criminalité. </p>
+
+        <p class="texte intro">Outre ces variables, et après discussion avec M. Valette, nous avons retenu des données ayant une part moindre, mais socialement et culturellement intégrées à la notion de criminalité au Mexique.</p>
+
+        <p class="texte intro">Nous obtenons donc des variables hétérogènes dans leur sens et leur niveau de violence (contravention vs homicide, par exemple), et sur lesquelles nous n’avons pas opéré de distinction. Certains résultats étant particulièrement significatifs : 
+          le vol, par exemple, représente 43,5% du total de la criminalité. </p>
+
+      
+
+      </div>
+
+
+
+        
           
+
     
     
         
 
     </div>
-    <div class="col-md-3 text-justify">
-      <h3 class="bibliographie">Bibliographie</h3>
+
+    <div class="col-md-3 text-justify bibliographie">
+      <h3>Bibliographie</h3>
       <br>
       <br>
-      <p class="texte source"><a href="https://www.cairn.info/revue-espace-geographique-2004-4-page-336.html">(1] M. Guerrien, Transformation et fragmentation des espaces urbains. Le cas de la zone
-        métropolitaine du bassin de Mexico, L’espace géographique 2004/4, pp.336-352</a></p>
+      <p class=""><a href="https://www.festivalgeopolitique.com/fr%C3%A9d%C3%A9ric-johansson-mexico-pouvoir-ou-contre-pouvoir-dune-m%C3%A9tropole-%C3%A9mergente">[1] F. Johansson, «Mexico : pouvoir ou contre-pouvoir d’une métropole émergente ?,» chez Festival de Géopolitique de Grenoble, Grenoble, 2017.</a></p>
+      <br>
+      <p class=""><a href="https://journals.openedition.org/echogeo/14020#ftn7">[2] M. Guerrien, «Transformation et fragmentation des espaces urbains. Le cas de la zone métropolitaine du bassin de Mexico,» L’espace géographique, pp. 336-352, Avril 2004. </a></p>
+      <br>
+      <p class=""><a href="https://www.cairn.info/revue-espace-geographique-2004-4-page-336.html">[3] A. Ribardière et J.-F. Valette, «La pauvreté urbaine à Mexico : une approche de la diversité des colonies populaires,» EchoGéo, n° %130, 2014.</a></p>
+      <br>
+      <p class=""><a href="https://fr.wikipedia.org/wiki/Criminalit%C3%A9">[4] A. Ribardière et B. Tallet, Atlas Mégapoles : Mexico, Autrement, Éd., 2011.</a></p>
+      <br>
+      <p class=""><a href="https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva">[5] Site elcri.men par D. Valle-Jones.</a></p>
+      <br>
+      <p class=""><a href="https://fr.wikipedia.org/wiki/Criminalit%C3%A9">[6] 	Collectif, «https://fr.wikipedia.org/wiki/Criminalit%C3%A9,» 12 08 2022. [En ligne]. Available: https://fr.wikipedia.org/wiki/Criminalit%C3%A9.</a></p>
+      <br>
+      <p class=""><a href="https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva">[7] Gobierno de Mexico, «Datos Abiertos de Incidencia Delictiva,» 2022.</a></p>
+      <br>
+      <p class=""><a href="https://www.larousse.fr/dictionnaires/francais/pr%C3%A9carit%C3%A9/63303">[8] Larousse, «Définitions : précarité - Dictionnaire de français Larousse,» 2022.</a></p>
+      <br>
+      <p class=""><a href="https://dictionnaire.lerobert.com/definition/precarite">[9] Le Robert, «précarité - Définitions, synonymes, conjugaison, exemples,» 2022.</a></p>
+      <br>
+      <p class="biblio">[10] A. Villeneuve, « Construire un indicateur de précarité : les étapes d'une démarche empirique,» Économie et Statistique, pp. 93-105, Juillet-Août 1984.</p>
+  
     </div>
 
   </div>

@@ -73,25 +73,26 @@
           <span>Dashboard</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="statistiques_bivariees.html">
-          <i class="bi bi-bar-chart-line"></i>
-          <span>Bivarié</span>
-        </a>
-      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Multivarié</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Socio-démographie</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <p>Analyse bivariée</p>
           <li>
-            <a href="statistiques_multivariees.html#acp">
+            <a href="statistiques_sociodemo.html#corr">
+              <i class="bi bi-circle"></i><span>Corrélogramme</span>
+            </a>
+          </li>
+          <p>Analyse multivariée</p>
+          <li>
+            <a href="statistiques_sociodemo.html#acp">
               <i class="bi bi-circle"></i><span>A.C.P</span>
             </a>
           </li>
           <li>
-            <a href="statistiques_multivariees.html#cah">
+            <a href="statistiques_sociodemo.html#cah">
               <i class="bi bi-circle"></i><span>C.A.H</span>
             </a>
           </li>
@@ -99,17 +100,35 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="statistiques_indice.html">
-          <i class="bi bi-cash-coin"></i>          
-          <span>Indice de précarité</span>
+        <a class="nav-link collapsed" data-bs-target="#forms-nav2" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-peace"></i><span>Criminalité</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
+        <ul id="forms-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <p>Analyse bivariée</p>
+          <li>
+            <a href="statistiques_crime.html#corr">
+              <i class="bi bi-circle"></i><span>Corrélogramme</span>
+            </a>
+          </li>
+          <p>Analyse multivariée</p>
+          <li>
+            <a href="statistiques_crime.html#acp">
+              <i class="bi bi-circle"></i><span>A.C.P</span>
+            </a>
+          </li>
+          <li>
+            <a href="statistiques_crime.html#cah">
+              <i class="bi bi-circle"></i><span>C.A.H</span>
+            </a>
+          </li>
+        </ul>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-graph-down"></i><span>Modèle de régression linéaire</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
             <a href="statistiques_regression.html#modele">
               <i class="bi bi-circle"></i><span>Modélisation de la problématique</span>
@@ -361,48 +380,51 @@
                 <table class="table table-dark">
                   <thead>
                     <tr>
-                      <th scope="col">MUN</th>
-                      <th scope="col">bles_s</th>
-                      <th scope="col">bles_phab</th>
-                      <th scope="col">dc_s</th>
-                      <th scope="col">dc_phab</th>
+                      <th scope="col">Crimes recensés par le gouvernement Mexicain	Somme	Part</th>
+                      <th scope="col">Somme</th>
+                      <th scope="col">Part (100.000)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">09002</th>
-                      <td>10822</td>
-                      <td>49.6319</td>
-                      <td>256</td>
-                      <td>1.1878</td>
+                      <th scope="row">Extorsion</th>
+                      <td>3553</td>
+                      <td>0.5</td>
                     </tr>
                     <tr>
-                      <th scope="row">09003</th>
-                      <td>15725</td>
-                      <td>72.11809</td>
-                      <td>456</td>
-                      <td>2.0913</td>
+                      <th scope="row">Blessures</th>
+                      <td>76786</td>
+                      <td>11.9</td>
                     </tr>
                     <tr>
-                      <th scope="row">09004</th>
-                      <td>3787</td>
-                      <td>17.3679</td>
-                      <td>456</td>
-                      <td>2.0913</td>
+                      <th scope="row">Féminicides</th>
+                      <td>213</td>
+                      <td>0</td>
                     </tr>
                     <tr>
-                      <th scope="row">09005</th>
-                      <td>24228</td>
-                      <td>111.1146</td>
-                      <td>589</td>
-                      <td>2.7012</td>
+                      <th scope="row">Homicides</th>
+                      <td>6115</td>
+                      <td>0.9</td>
                     </tr>
                     <tr>
-                      <th scope="row">09006</th>
-                      <td>10244</td>
-                      <td>46.9810</td>
-                      <td>207</td>
-                      <td>0.9493</td>
+                      <th scope="row">Crimes de droit commun</th>
+                      <td>74929</td>
+                      <td>11.6</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Vol</th>
+                      <td>281585</td>
+                      <td>43.5</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Enlèvement</th>
+                      <td>416</td>
+                      <td>0.1</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Violence domestique</th>
+                      <td>40643</td>
+                      <td>6.3</td>
                     </tr>
                   </tbody>
                 </table>

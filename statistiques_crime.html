@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mexico | Statistiques</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/p8_icon.jpg">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css'
+    integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=='
+    crossorigin='anonymous' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.css'
+    integrity='sha512-c0+vSv9tnGS4fzwTIBFPcdCZ0QwP+aTePvZeAJkYpbj67KvQ5+VrJjDh3lil48LILJxhICQf66dQ8t/BJyOo/g=='
+    crossorigin='anonymous' />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/statistiques.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="d-flex align-items-center justify-content-between">
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div><!-- End Logo -->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/logo.png" alt="logo" width="250px" height="50px" class="d-inline-block align-text-top">
+        </a>
+
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" aria-current="page" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="statistiques.html">Statistiques</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="cartotheque.html">Cartothèque</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="rapport.html">Rapport</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header><!-- End Header -->
+
+
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="statistiques.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Socio-démographie</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <p>Analyse bivariée</p>
+          <li>
+            <a href="statistiques_sociodemo.html#corr">
+              <i class="bi bi-circle"></i><span>Corrélogramme</span>
+            </a>
+          </li>
+          <p>Analyse multivariée</p>
+          <li>
+            <a href="statistiques_sociodemo.html#acp">
+              <i class="bi bi-circle"></i><span>A.C.P</span>
+            </a>
+          </li>
+          <li>
+            <a href="statistiques_sociodemo.html#cah">
+              <i class="bi bi-circle"></i><span>C.A.H</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav2" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-peace"></i><span>Criminalité</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <p>Analyse bivariée</p>
+          <li>
+            <a href="statistiques_crime.html#corr">
+              <i class="bi bi-circle"></i><span>Corrélogramme</span>
+            </a>
+          </li>
+          <p>Analyse multivariée</p>
+          <li>
+            <a href="statistiques_crime.html#acp">
+              <i class="bi bi-circle"></i><span>A.C.P</span>
+            </a>
+          </li>
+          <li>
+            <a href="statistiques_crime.html#cah">
+              <i class="bi bi-circle"></i><span>C.A.H</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-graph-down"></i><span>Modèle de régression linéaire</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="statistiques_regression.html#modele">
+              <i class="bi bi-circle"></i><span>Modélisation de la problématique</span>
+            </a>
+          </li>
+          <li>
+            <a href="statistiques_regression.html#R2">
+              <i class="bi bi-circle"></i><span>Coefficient de détermination R²</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="https://github.com/Jasig21/M2G2M_ProjetTutore_Mexique/tree/main/codesR">
+          <i class="bi bi-journal-code"></i>
+          <span>Codes R utilisés</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <h1>Criminalité</h1>
+    <section class="section dashboard" id="corr">
+      <h2>Analyse bivariée</h2>
+      <br>
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schéma</h5>
+              <img src="assets/img/export stat/crime/bivarié/crime_corr.png" class="img-card" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">analyse</h5>
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+    <section class="section dashboard" id="corr">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Table</h5>
+              <table class="table table-dark">
+                <thead class="table-head">
+                  <tr>
+                    <th title="Field #1">p-value</th>
+                    <th title="Field #2">Blessures</th>
+                    <th title="Field #3">CDC</th>
+                    <th title="Field #4">Homicide/féminicide</th>
+                    <th title="Field #5">Sequestration</th>
+                    <th title="Field #6">Violence familiale</th>
+                    <th title="Field #7">Vol</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Blessures</td>
+                    <td></td>
+                    <td>0.8599</td>
+                    <td>0.0000</td>
+                    <td>0.2328</td>
+                    <td>0.4330</td>
+                    <td>0.0007</td>
+                  </tr>
+                  <tr>
+                    <td>CDC</td>
+                    <td>0.8599</td>
+                    <td></td>
+                    <td>0.8602</td>
+                    <td>0.1242</td>
+                    <td>0.0226</td>
+                    <td>0.5711</td>
+                  </tr>
+                  <tr>
+                    <td>Homicide/féminicide</td>
+                    <td>0.0000</td>
+                    <td>0.8602</td>
+                    <td></td>
+                    <td>0.2326</td>
+                    <td>0.4328</td>
+                    <td>0.0007</td>
+                  </tr>
+                  <tr>
+                    <td>Sequestration</td>
+                    <td>0.2328</td>
+                    <td>0.1242</td>
+                    <td>0.2326</td>
+                    <td></td>
+                    <td>0.0111</td>
+                    <td>0.4381</td>
+                  </tr>
+                  <tr>
+                    <td>Violence familiale</td>
+                    <td>0.4330</td>
+                    <td>0.0226</td>
+                    <td>0.4328</td>
+                    <td>0.0111</td>
+                    <td></td>
+                    <td>0.6989</td>
+                  </tr>
+                  <tr>
+                    <td>Vol</td>
+                    <td>0.0007</td>
+                    <td>0.5711</td>
+                    <td>0.0007</td>
+                    <td>0.4381</td>
+                    <td>0.6989</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">analyse</h5>
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+    <section class="section dashboard" id="acp">
+      <h2>Analyse Multivariée</h2>
+      <h4>Analyse à composantes principales</h4>
+      <br>
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Analyse</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schéma</h5>
+              <img src="assets/img/export stat/crime/acp/crime_acp_axe.png" class="img-card" />
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Table</h5>
+              <table class="table table-dark">
+                <thead class="table-head">
+                  <tr>
+                    <th>ACP</th>
+                    <th>Comp.1</th>
+                    <th>Comp.2</th>
+                    <th>Comp.3</th>
+                    <th>Comp.4</th>
+                    <th>Comp.5</th>
+                    <th>Comp.6</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Blessures</td>
+                    <td>0.454</td>
+                    <td></td>
+                    <td>0.188</td>
+                    <td>0.189</td>
+                    <td>0.468</td>
+                    <td>0.707</td>
+                  </tr>
+                  <tr>
+                    <td>Crimes de droit commun,</td>
+                    <td>0.298</td>
+                    <td>0.742</td>
+                    <td>-0.212</td>
+                    <td>-0.556</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Homicide/féminicide</td>
+                    <td>0.454</td>
+                    <td></td>
+                    <td>0.188</td>
+                    <td>0.189</td>
+                    <td>0.468</td>
+                    <td>-0.707</td>
+                  </tr>
+                  <tr>
+                    <td>Sequestration</td>
+                    <td>0.409</td>
+                    <td>-0.307</td>
+                    <td>-0.307</td>
+                    <td>-0.844</td>
+                    <td>0.141</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Violence familiale</td>
+                    <td>0.362</td>
+                    <td>-0.575</td>
+                    <td>0.285</td>
+                    <td>-0.665</td>
+                    <td>-0.122</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Vol</td>
+                    <td>0.447</td>
+                    <td>0.127</td>
+                    <td>0.302</td>
+                    <td>0.396</td>
+                    <td>-0.732</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">analyse</h5>
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+    </section>
+
+
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schéma</h5>
+              <img src="assets/img/export stat/crime/acp/crime_acp_var.png" class="img-card" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Analyse</h5>
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+      </div>
+    </section>
+
+
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Analyse</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schéma</h5>
+              <img src="assets/img/export stat/crime/acp/crime_participation_acp.png" class="img-card" />
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+      </div>
+    </section>
+
+
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Analyse</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Corrélation ACP1 et criminalité</h5>
+              <table class="table table-dark">
+                <thead class="table-head">
+                  <tr>
+                    <th title="Field #1">Variable</th>
+                    <th title="Field #1">Corrélation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Blessures</td>
+                    <td >0.9936043</td>
+                  </tr>
+                  <tr>
+                    <td>Crimes de droit commun,</td>
+                    <td >0.6527556</td>
+                  </tr>
+                  <tr>
+                    <td>Homicide/féminicide</td>
+                    <td >0.9936174</td>
+                  </tr>
+                  <tr>
+                    <td>Sequestration</td>
+                    <td >0.8956955</td>
+                  </tr>
+                  <tr>
+                    <td>Violence familiale</td>
+                    <td >0.7918118</td>
+                  </tr>
+                  <tr>
+                    <td>Vol</td>
+                    <td >0.9776109</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+      </div>
+    </section>
+
+
+    <section class="section dashboard" id="cah">
+      <h4>Classification ascendante hiérarchique</h4>
+      <br>
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Analyse</h5>
+              <img src="assets/img/export stat/crime/cah/crime_dendogramme.png" class="img-card" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schéma</h5>
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Analyse</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schéma</h5>
+              <img src="assets/img/export stat/crime/cah/crime_nbclust.png" class="img-card" />
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Analyse</h5>
+              <img src="assets/img/export stat/crime/cah/crime_factor_map.png" class="img-card" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schéma</h5>
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Analyse</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schéma</h5>
+              <img src="assets/img/export stat/crime/cah/crime_cah_cluster.png" class="img-card" />
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+
+  <!-- ======= Footer ======= -->
+  <nav class="navbar footer">
+    <div class="container-fluid  d-flex justify-content-center">
+      &copy;&nbsp <strong><span>M.Enora </strong>&nbsp | &nbsp <strong>I.Gérard</strong> &nbsp | &nbsp
+      <strong>L.Marion</strong> &nbsp | &nbsp <strong>K.Yasmine </span></strong>
+    </div>
+  </nav>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.js'
+    integrity='sha512-gMrnU9iM+azBQtrSC8kTJy6+g+hjaIHnElQmb41QeHNTGYjbbtm0BptpIMgXYpS6iyWq9bPkxrcqgK8aqRsjAg=='
+    crossorigin='anonymous'></script>
+
+</body>
+
+</html>

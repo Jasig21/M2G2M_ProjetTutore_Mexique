@@ -14,11 +14,18 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.css' integrity='sha512-c0+vSv9tnGS4fzwTIBFPcdCZ0QwP+aTePvZeAJkYpbj67KvQ5+VrJjDh3lil48LILJxhICQf66dQ8t/BJyOo/g==' crossorigin='anonymous'/>  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css'
+    integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=='
+    crossorigin='anonymous' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.css'
+    integrity='sha512-c0+vSv9tnGS4fzwTIBFPcdCZ0QwP+aTePvZeAJkYpbj67KvQ5+VrJjDh3lil48LILJxhICQf66dQ8t/BJyOo/g=='
+    crossorigin='anonymous' />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
 
   <!-- Template Main CSS File -->
@@ -39,7 +46,7 @@
         <a class="navbar-brand" href="#">
           <img src="assets/img/logo.png" alt="logo" width="250px" height="50px" class="d-inline-block align-text-top">
         </a>
-     
+
         <div class=" collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto ">
             <li class="nav-item">
@@ -60,7 +67,7 @@
     </nav>
   </header><!-- End Header -->
 
-  
+
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
@@ -73,25 +80,26 @@
           <span>Dashboard</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="statistiques_bivariees.html">
-          <i class="bi bi-bar-chart-line"></i>
-          <span>Bivarié</span>
-        </a>
-      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Multivarié</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Socio-démographie</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <p>Analyse bivariée</p>
           <li>
-            <a href="statistiques_multivariees.html#acp">
+            <a href="statistiques_sociodemo.html#corr">
+              <i class="bi bi-circle"></i><span>Corrélogramme</span>
+            </a>
+          </li>
+          <p>Analyse multivariée</p>
+          <li>
+            <a href="statistiques_sociodemo.html#acp">
               <i class="bi bi-circle"></i><span>A.C.P</span>
             </a>
           </li>
           <li>
-            <a href="statistiques_multivariees.html#cah">
+            <a href="statistiques_sociodemo.html#cah">
               <i class="bi bi-circle"></i><span>C.A.H</span>
             </a>
           </li>
@@ -99,17 +107,36 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="statistiques_indice.html">
-          <i class="bi bi-cash-coin"></i>          
-          <span>Indice de précarité</span>
+        <a class="nav-link collapsed" data-bs-target="#forms-nav2" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-peace"></i><span>Criminalité</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
+        <ul id="forms-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <p>Analyse bivariée</p>
+          <li>
+            <a href="statistiques_crime.html#corr">
+              <i class="bi bi-circle"></i><span>Corrélogramme</span>
+            </a>
+          </li>
+          <p>Analyse multivariée</p>
+          <li>
+            <a href="statistiques_crime.html#acp">
+              <i class="bi bi-circle"></i><span>A.C.P</span>
+            </a>
+          </li>
+          <li>
+            <a href="statistiques_crime.html#cah">
+              <i class="bi bi-circle"></i><span>C.A.H</span>
+            </a>
+          </li>
+        </ul>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-graph-down"></i><span>Modèle de régression linéaire</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-graph-down"></i><span>Modèle de régression linéaire</span><i
+            class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+        <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
             <a href="statistiques_regression.html#modele">
               <i class="bi bi-circle"></i><span>Modélisation de la problématique</span>
@@ -135,66 +162,160 @@
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
-    <section class="section dashboard" id="modele">
+    <h2>Modélisation de la problématique</h2>
+    <br>
+    <section class="section dashboard" id="cah">
       <div class="row">
         <!-- Left side columns -->
-        <div class="col-lg-4">
+        <div class="col-lg-8">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
+              <h5 class="card-title">Coefficients de corrélation (Pearson)  entre les variables de criminalité et l'Axe 1 de l'ACP sur la précarité</h5>
+              <table class="table table-dark">
+                <thead class="table-head">
+                  <tr>
+                    <th title="Field #1">Crime par part</th>
+                    <th title="Field #2"> Coéfficient de corrélation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>sec_phab</td>
+                    <td >-0.6858001 </td>
+                  </tr>
+                  <tr>
+                    <td>bles_phab</td>
+                    <td >-0.6810913 </td>
+                  </tr>
+                  <tr>
+                    <td>hfgv_phab</td>
+                    <td >-0.681084</td>
+                  </tr>
+                  <tr>
+                    <td>vol_phab</td>
+                    <td >-0.655541</td>
+                  </tr>
+                  <tr>
+                    <td>vf_phab </td>
+                    <td >-0.6536845 </td>
+                  </tr>
+                  <tr>
+                    <td>dc_phab</td>
+                    <td >-0.2678527</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
 
         <!-- Right side columns -->
-        <div class="col-lg-8">
+        <div class="col-lg-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">analyse</h5>
-            </div>
+              <h5 class="card-title">Nous faisons l'hypothèse d'un lien de dépendance entre les variables de criminalité et l'Axe 1 de l'ACP sur la précarité.
+                Nous calculons déjà des coefficients de corrélation linéaire (Pearson) pour estimer s'il y a un lien de dépendance.</h5>            </div>
           </div>
         </div><!-- End Right side columns -->
 
       </div>
     </section>
 
-    <section class="section dashboard" id="R2">
+
+    <section class="section dashboard" id="acp">
       <div class="row">
         <!-- Left side columns -->
-        <div class="col-lg-4">
+        <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
+              <h6 class="card-title"><br>Seuls les crimes de droit commun ne semblent pas corrélés à la précarité (coef < 0,65). Tous les autres liens sont significatifs, mais nous choisissons de nous focaliser sur les 2 variables les plus corrélées à la précarité: les séquestrations (avec -0,685) et les blessures (-0,681).
+                On voit donc des liens suffisamment significatifs, linéaires et négatifs d'ordre moyen entre les variables (quand la précarité diminue, les séquestrations et les délits avec blessures diminuent également). 
+                On cherche alors à formaliser cette relation de dépendance en calculant leur régression linéaire.</h6>
             </div>
           </div>
         </div>
 
         <!-- Right side columns -->
-        <div class="col-lg-8">
+        <div class="col-lg-6">
           <div class="card">
+            <br>
             <div class="card-body">
-              <h5 class="card-title">analyse</h5>
+              <img src="assets/img/export stat/regression/reg_cp1_bles.png" class="img-stats">
             </div>
           </div>
         </div><!-- End Right side columns -->
 
+        <!-- Right side columns -->
+        <div class="col-lg-6">
+          <div class="card">
+            <br>
+            <div class="card-body">
+              <img src="assets/img/export stat/regression/reg_cp1_sec.png" class="img-stats">
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+        <h6 class="card-title">Puis nous estimons à l'aide d'un coefficient de détermination (R2) la qualité de la prédiction de la régression linéaire calculée.
+        </h6>
       </div>
+    </section>
+
+    <br>
+    <br>
+    <h2>Coefficient de détermination R²</h2>
+    <section class="section dashboard" id="acp">
+      <div class="row">
+        <!-- Right side columns -->
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">R² du modèle de régression de la variable "blessures"</h5>
+              <img src="assets/img/export stat/regression/reg_summary_bles.png" class="img-stats">
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+
+        <!-- Right side columns -->
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">R² du modèle de régression de la variable "séquestrations"</h5>
+              <img src="assets/img/export stat/regression/reg_summary_seq.png" class="img-stats">
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+      </div>
+
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">On voit ici que le R2 pour les délits avec blessures est de 0.4564: c'est à dire que 46% de la variation des blessures est expliquée par la composante 1 de l'ACP sur la précarité.
+                Le coefficient de régression associé à la précarité est égal à -1.170e+00, soit -1. Cela signifie que lorsque la précarité diminue de 1, les blessures diminuent également de 1. 
+                La p-value associée à ce coefficient est de 2.43e-11, soit très proche de 0. Cela signifie que l’effet de la précarité sur les délits avec blessures est statistiquement significatif.
+                
+                On voit  donc que nos modèles expliquent tous les deux 46% des valeurs pour les séquestrations et les délits avec blessures, ce qui est satisfaisant mais reste assez peu pour expliquer les variables.</h5>
+
+              <h5>Enfin on va tester les écarts à notre modèle de prédiction, en regardant si les différences entre les valeurs observées et les valeurs prédites (les résidus) s'écartent de manière significative de notre modèle. Ces résidus sont récupérés dans un tableau puis <a href="cartotheque.html">cartographiés</a>.</h5>
+            </div>
+          </div>
+        </div>
     </section>
 
   </main><!-- End #main -->
 
 
-
   <!-- ======= Footer ======= -->
   <nav class="navbar footer">
     <div class="container-fluid  d-flex justify-content-center">
-        &copy;&nbsp <strong><span>M.Enora  </strong>&nbsp | &nbsp  <strong>I.Gérard</strong>  &nbsp  | &nbsp  <strong>L.Marion</strong>  &nbsp | &nbsp  <strong>K.Yasmine </span></strong>
+      &copy;&nbsp <strong><span>M.Enora </strong>&nbsp | &nbsp <strong>I.Gérard</strong> &nbsp | &nbsp
+      <strong>L.Marion</strong> &nbsp | &nbsp <strong>K.Yasmine </span></strong>
     </div>
   </nav>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.js' integrity='sha512-gMrnU9iM+azBQtrSC8kTJy6+g+hjaIHnElQmb41QeHNTGYjbbtm0BptpIMgXYpS6iyWq9bPkxrcqgK8aqRsjAg==' crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.js'
+    integrity='sha512-gMrnU9iM+azBQtrSC8kTJy6+g+hjaIHnElQmb41QeHNTGYjbbtm0BptpIMgXYpS6iyWq9bPkxrcqgK8aqRsjAg=='
+    crossorigin='anonymous'></script>
 
 </body>
 
