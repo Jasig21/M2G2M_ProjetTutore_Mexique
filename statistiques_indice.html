@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mexico | Statistiques</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/p8_icon.jpg">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.css' integrity='sha512-c0+vSv9tnGS4fzwTIBFPcdCZ0QwP+aTePvZeAJkYpbj67KvQ5+VrJjDh3lil48LILJxhICQf66dQ8t/BJyOo/g==' crossorigin='anonymous'/>  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/statistiques.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="d-flex align-items-center justify-content-between">
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div><!-- End Logo -->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/logo.png" alt="logo" width="250px" height="50px" class="d-inline-block align-text-top">
+        </a>
+     
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" aria-current="page" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="statistiques.html">Statistiques</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="cartotheque.html">Cartothèque</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="rapport.html">Rapport</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header><!-- End Header -->
+
+  
+
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="statistiques.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="statistiques_bivariees.html">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Bivarié</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Multivarié</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="statistiques_multivariees.html#acp">
+              <i class="bi bi-circle"></i><span>A.C.P</span>
+            </a>
+          </li>
+          <li>
+            <a href="statistiques_multivariees.html#cah">
+              <i class="bi bi-circle"></i><span>C.A.H</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="statistiques_indice.html">
+          <i class="bi bi-cash-coin"></i>          
+          <span>Indice de précarité</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-graph-down"></i><span>Modèle de régression linéaire</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="statistiques_regression.html#modele">
+              <i class="bi bi-circle"></i><span>Modélisation de la problématique</span>
+            </a>
+          </li>
+          <li>
+            <a href="statistiques_regression.html#R2">
+              <i class="bi bi-circle"></i><span>Coefficient de détermination R²</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="https://github.com/Jasig21/M2G2M_ProjetTutore_Mexique/tree/main/codesR">
+          <i class="bi bi-journal-code"></i>
+          <span>Codes R utilisés</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  
+  <main id="main" class="main">
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schéma</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side columns -->
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">analyse</h5>
+            </div>
+          </div>
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <nav class="navbar footer">
+    <div class="container-fluid  d-flex justify-content-center">
+        &copy;&nbsp <strong><span>M.Enora  </strong>&nbsp | &nbsp  <strong>I.Gérard</strong>  &nbsp  | &nbsp  <strong>L.Marion</strong>  &nbsp | &nbsp  <strong>K.Yasmine </span></strong>
+    </div>
+  </nav>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.js' integrity='sha512-gMrnU9iM+azBQtrSC8kTJy6+g+hjaIHnElQmb41QeHNTGYjbbtm0BptpIMgXYpS6iyWq9bPkxrcqgK8aqRsjAg==' crossorigin='anonymous'></script>
+
+</body>
+
+</html>

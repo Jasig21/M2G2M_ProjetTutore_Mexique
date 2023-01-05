@@ -62,8 +62,8 @@
 <!----------------------------------- Triggers --------------------------------------->
   <div class="row body-container">
     <div class="col-sm-12 text-justify entete-container">
-      <p class="en-tete">Ici sont regroupés toutes les productions cartographiques liées à l'étude. L'analyse de chaque carte est disponible en cliquant sur l'encart dédié.
-        Une WebMap est également mise à disposition avec les différentes strates de la zone d'étude.
+      <h1>Carthotèque</h1>
+      <p class="en-tete">Consultez toutes les cartes produites dans le cadre de ce projet et naviguez dans la WebMap pour découvrir la ZMVM.
       </p>
     </div>
     <div class="col-sm-5">
@@ -95,7 +95,7 @@
           </div>
         </div>
         <div class="col-4 col-md-6 mapImg-container" data-bs-toggle="modal" data-bs-target="#carte5">
-          <div class="image" data-content="Crimes de droits communs" >
+          <div class="image" data-content="Crimes de droit commun" >
             <img src="assets/img/cdc.png" class="img-maps">
           </div>
         </div>
@@ -388,6 +388,31 @@
       </div>
     </div>
   </div>
+
+  <div class="toottip-container" data-bs-toggle="modal" data-bs-target="#tooltip">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    </svg>
+  </div>
+
+  <div class="modal fade" id="tooltip" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Ici sont regroupés toutes les productions cartographiques liées à l'étude. L'analyse de chaque carte est disponible en cliquant sur l'encart dédié.
+          Une WebMap est également mise à disposition avec les différentes strates de la zone d'étude.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <nav class="navbar footer">
     <div class="container-fluid  d-flex justify-content-center">
         &copy;&nbsp <strong><span>M.Enora  </strong>&nbsp | &nbsp  <strong>I.Gérard</strong>  &nbsp  | &nbsp  <strong>L.Marion</strong>  &nbsp | &nbsp  <strong>K.Yasmine </span></strong>
@@ -428,26 +453,26 @@
     
     var styleENT = {
       "color": "#ff7800",
-      "weight": 5,
+      "weight": 2,
       "opacity": 0.65
     };
 
     var styleMUN = {
       "color": "#4b875a",
-      "weight": 5,
-      "opacity": 0.65
+      "weight": 2,
+      "opacity": 0.7
     };
 
     var styleLOC = {
       "color": "#434ea0",
-      "weight": 5,
-      "opacity": 0.65
+      "weight": 2,
+      "opacity": 0.8
     };
 
     var styleAGEB = {
-      "color": "#9543a0",
-      "weight": 5,
-      "opacity": 0.65
+      "color": "#BF0000",
+      "weight": 0.5,
+      "opacity": 10
     };
 
     var ent = L.geoJson(entidad, {

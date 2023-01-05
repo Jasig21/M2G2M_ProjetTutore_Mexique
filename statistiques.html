@@ -17,13 +17,12 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.36.3/apexcharts.css' integrity='sha512-tAOeGX9ukgwtibgDdDS6xTuM2K7lks4o6dh83pl8Vi7WQd5chFETDvTW1bOmRCQJBlkvxEJQoHyU09mZcnRd+Q==' crossorigin='anonymous'/>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.css' integrity='sha512-c0+vSv9tnGS4fzwTIBFPcdCZ0QwP+aTePvZeAJkYpbj67KvQ5+VrJjDh3lil48LILJxhICQf66dQ8t/BJyOo/g==' crossorigin='anonymous'/>  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/statistiques.css" rel="stylesheet">
 
 
 </head>
@@ -75,7 +74,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="statistiques.html">
+        <a class="nav-link collapsed" href="statistiques_bivariees.html">
           <i class="bi bi-bar-chart-line"></i>
           <span>Bivarié</span>
         </a>
@@ -87,12 +86,12 @@
         </a>
         <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="statistiques_multivariees.html#acp">
               <i class="bi bi-circle"></i><span>A.C.P</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="statistiques_multivariees.html#cah">
               <i class="bi bi-circle"></i><span>C.A.H</span>
             </a>
           </li>
@@ -100,7 +99,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="statistiques.html">
+        <a class="nav-link collapsed" href="statistiques_indice.html">
           <i class="bi bi-cash-coin"></i>          
           <span>Indice de précarité</span>
         </a>
@@ -112,12 +111,12 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-layouts.html">
+            <a href="statistiques_regression.html#modele">
               <i class="bi bi-circle"></i><span>Modélisation de la problématique</span>
             </a>
           </li>
           <li>
-            <a href="forms-editors.html">
+            <a href="statistiques_regression.html#R2">
               <i class="bi bi-circle"></i><span>Coefficient de détermination R²</span>
             </a>
           </li>
@@ -136,14 +135,10 @@
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
-
-    
-
     <section class="section dashboard">
       <div class="row">
         <!-- Right side columns -->
         <div class="col-lg-4">
-
           <!-- Recent Activity -->
           <div class="card">
             <div class="card-body">
@@ -226,117 +221,29 @@
             </div>
           </div><!-- End Timeline project -->
 
-          
-
-          
-          <!-- Website Traffic -->
+          <!-- ACP -->
           <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
+            <div class="card-body">
+              <h5 class="card-title">Analayse en composantes principales </h5>
+              <img src="resultats_stats/axe_acp.png" class="img-stats">
             </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
-
-              <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  echarts.init(document.querySelector("#trafficChart")).setOption({
-                    tooltip: {
-                      trigger: 'item'
-                    },
-                    legend: {
-                      top: '5%',
-                      left: 'center'
-                    },
-                    series: [{
-                      name: 'Access From',
-                      type: 'pie',
-                      radius: ['40%', '70%'],
-                      avoidLabelOverlap: false,
-                      label: {
-                        show: false,
-                        position: 'center'
-                      },
-                      emphasis: {
-                        label: {
-                          show: true,
-                          fontSize: '18',
-                          fontWeight: 'bold'
-                        }
-                      },
-                      labelLine: {
-                        show: false
-                      },
-                      data: [{
-                          value: 1048,
-                          name: 'Search Engine'
-                        },
-                        {
-                          value: 735,
-                          name: 'Direct'
-                        },
-                        {
-                          value: 580,
-                          name: 'Email'
-                        },
-                        {
-                          value: 484,
-                          name: 'Union Ads'
-                        },
-                        {
-                          value: 300,
-                          name: 'Video Ads'
-                        }
-                      ]
-                    }]
-                  });
-                });
-              </script>
-
-            </div>
-          </div><!-- End Website Traffic -->
-        </div><!-- End Right side columns -->
+          </div>
 
 
-        <!-- Left side columns -->
+
+        </div><!-- End Left side columns -->
+
         <div class="col-lg-8">
           <div class="row">
 
-            <!-- Sales Card -->
+            <!-- conclusions -->
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
 
                 <div class="card-body">
                   <h5 class="card-title">Sales <span>| Today</span></h5>
 
                   <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
-                    </div>
                     <div class="ps-3">
                       <h6>145</h6>
                       <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
@@ -346,32 +253,15 @@
                 </div>
 
               </div>
-            </div><!-- End Sales Card -->
+            </div>
 
-            <!-- Revenue Card -->
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
 
                 <div class="card-body">
                   <h5 class="card-title">Revenue <span>| This Month</span></h5>
 
                   <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
-                    </div>
                     <div class="ps-3">
                       <h6>$3,264</h6>
                       <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
@@ -381,110 +271,145 @@
                 </div>
 
               </div>
-            </div><!-- End Revenue Card -->
+            </div>
 
-            <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
-
               <div class="card info-card customers-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
                 <div class="card-body">
                   <h5 class="card-title">Customers <span>| This Year</span></h5>
 
                   <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
-                    </div>
                     <div class="ps-3">
                       <h6>1244</h6>
                       <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
-
                     </div>
                   </div>
 
                 </div>
               </div>
 
-            </div><!-- End Customers Card -->
+            </div>
 
-            <!-- Reports -->
+            <!-- Table1 -->
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Dark Table</h5>
-    
-                  <!-- Dark Table -->
+                  <h5 class="card-title">Aperçu de la table sociodémographique "var_indice_stock_tx"</h5>
                   <table class="table table-dark">
-                    <thead>
+                    <thead class="table-head">
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Position</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Start Date</th>
+                        <th scope="col">MUN</th>
+                        <th scope="col">pop_tot_bdger</th>
+                        <th scope="col">pop_tot_persviv</th>
+                        <th scope="col">P15A17A_NOA</th>
+                        <th scope="col">P15A17A_NOA_TX100</th>
+                        <th scope="col">P15A17A_NOA_TX1000</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Brandon Jacob</td>
-                        <td>Designer</td>
-                        <td>28</td>
-                        <td>2016-05-25</td>
+                        <th scope="row">09002</th>
+                        <td>432205</td>
+                        <td>132362</td>
+                        <td>13779</td>
+                        <td>3.19</td>
+                        <td>3188.07</td>
                       </tr>
                       <tr>
-                        <th scope="row">2</th>
-                        <td>Bridie Kessler</td>
-                        <td>Developer</td>
-                        <td>35</td>
-                        <td>2014-12-05</td>
+                        <th scope="row">09003</th>
+                        <td>614447</td>
+                        <td>184264</td>
+                        <td>19112</td>
+                        <td>3.11</td>
+                        <td>3110.44</td>
                       </tr>
                       <tr>
-                        <th scope="row">3</th>
-                        <td>Ashleigh Langosh</td>
-                        <td>Finance</td>
-                        <td>45</td>
-                        <td>2011-08-12</td>
+                        <th scope="row">09004</th>
+                        <td>217686</td>
+                        <td>66220</td>
+                        <td>7966</td>
+                        <td>3.66</td>
+                        <td>3659.4</td>
                       </tr>
                       <tr>
-                        <th scope="row">4</th>
-                        <td>Angus Grady</td>
-                        <td>HR</td>
-                        <td>34</td>
-                        <td>2012-06-11</td>
+                        <th scope="row">09005</th>
+                        <td>1173351</td>
+                        <td>332413</td>
+                        <td>40377</td>
+                        <td>3.44</td>
+                        <td>3441.17</td>
                       </tr>
                       <tr>
-                        <th scope="row">5</th>
-                        <td>Raheem Lehner</td>
-                        <td>Dynamic Division Officer</td>
-                        <td>47</td>
-                        <td>2011-04-19</td>
+                        <th scope="row">9006</th>
+                        <td>404695</td>
+                        <td>116121</td>
+                        <td>13522</td>
+                        <td>3.34</td>
+                        <td>3341.28</td>
                       </tr>
                     </tbody>
-                  </table>
-                  <!-- End Dark Table -->
-    
+                  </table>    
                 </div>
               </div>
-    
-                
-            </div><!-- End Reports -->
+            </div>
+        </div>
 
+        <!-- Table 2 -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Aperçu de la table crimanalités "bd_crime"</h5>
+                <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">MUN</th>
+                      <th scope="col">bles_s</th>
+                      <th scope="col">bles_phab</th>
+                      <th scope="col">dc_s</th>
+                      <th scope="col">dc_phab</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">09002</th>
+                      <td>10822</td>
+                      <td>49.6319</td>
+                      <td>256</td>
+                      <td>1.1878</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">09003</th>
+                      <td>15725</td>
+                      <td>72.11809</td>
+                      <td>456</td>
+                      <td>2.0913</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">09004</th>
+                      <td>3787</td>
+                      <td>17.3679</td>
+                      <td>456</td>
+                      <td>2.0913</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">09005</th>
+                      <td>24228</td>
+                      <td>111.1146</td>
+                      <td>589</td>
+                      <td>2.7012</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">09006</th>
+                      <td>10244</td>
+                      <td>46.9810</td>
+                      <td>207</td>
+                      <td>0.9493</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-        </div><!-- End Left side columns -->
+        </div><!-- End Right side columns -->
 
       </div>
     </section>
@@ -492,29 +417,15 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; <strong><span>E.MAHIEUX | G.IN | M.LACROIX | Y.KHALEF </span></strong>. All Rights Reserved
+  <nav class="navbar footer">
+    <div class="container-fluid  d-flex justify-content-center">
+        &copy;&nbsp <strong><span>M.Enora  </strong>&nbsp | &nbsp  <strong>I.Gérard</strong>  &nbsp  | &nbsp  <strong>L.Marion</strong>  &nbsp | &nbsp  <strong>K.Yasmine </span></strong>
     </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.36.3/apexcharts.min.js' integrity='sha512-sa449wQ9TM6SvZV7TK7Zx/SjVR6bc7lR8tRz1Ar4/R6X2jOLaFln/9C+6Ak2OkAKZ/xBAKJ94dQMeYa0JT1RLg==' crossorigin='anonymous'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js' integrity='sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==' crossorigin='anonymous'></script>  <script src="assets/vendor/chart.js/chart.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.1/echarts.min.js' integrity='sha512-OTbGFYPLe3jhy4bUwbB8nls0TFgz10kn0TLkmyA+l3FyivDs31zsXCjOis7YGDtE2Jsy0+fzW+3/OVoPVujPmQ==' crossorigin='anonymous'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.min.js' integrity='sha512-P2W2rr8ikUPfa31PLBo5bcBQrsa+TNj8jiKadtaIrHQGMo6hQM6RdPjQYxlNguwHz8AwSQ28VkBK6kHBLgd/8g==' crossorigin='anonymous'></script>
+  </nav>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.js' integrity='sha512-gMrnU9iM+azBQtrSC8kTJy6+g+hjaIHnElQmb41QeHNTGYjbbtm0BptpIMgXYpS6iyWq9bPkxrcqgK8aqRsjAg==' crossorigin='anonymous'></script>
 
 </body>
 
