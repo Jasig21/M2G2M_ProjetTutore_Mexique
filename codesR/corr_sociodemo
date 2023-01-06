@@ -1,0 +1,208 @@
+rm(list=ls())
+
+#install.packages("corrplot")
+#install.packages("devtools")
+#install.packages("rmarkdown")
+#install.packages("FactoInvestigate")
+# devtools::install_github("diegovalle/mxmaps")
+#library(mxmaps)
+library("corrplot")
+library(stringr)
+library(Hmisc)
+library("rmarkdown")
+library(FactoInvestigate)
+library("FactoMineR")
+library(factoextra)
+library("NbClust")
+
+#pandoc_available(version = NULL, error = FALSE)
+#pandoc_version()
+
+# On importe le tableau en csv
+dfi <- read.table("indice_taux_LC_SAF_S614_SPINAC.csv",sep=";", header=T)
+head(dfi)
+
+# Longueur de 5 pour tous les codes mun
+mun <- str_pad(dfi$MUN, 5, pad = "0")
+dfi$MUN <- mun
+
+# Passage en index des codes mun pour ne pas gêner lors des traitements
+row.names(dfi) <- dfi[,1]
+dfi <- dfi[,-1] 
+
+#---------------
+# BIVARIEE
+#---------------
+
+# Création d'une matrice de corrélation
+M <- cor(dfi)
+head(round(M,4))
+
+#Visualisation de la matrice en integer et en couleur
+corrplot(M, method="number")
+# Tout est fortement corrélé à l'exception des logements précaires
+
+#test de la significativité des résultats (p-value)
+rcorr(M, type=c("pearson","spearman"))
+rcorr(as.matrix(M))
+### /!\ récupérer pour tableur ###
+
+#---------------
+# MULTIVARIEE
+#---------------
+
+### On prépare les données pour les analyses multivariée
+# On commence par centrer-réduire les variables
+dfi_multi <- data.frame(P15A17A_NOA = scale(dfi$P15A17A_NOA), 
+                        #P6A14A_NOA = scale(dfi$P6A14A_NOA),
+                        #PE_INAC = scale(dfi$PE_INAC),
+                        PSINDER = scale(dfi$PSINDER),
+                        VPH_SINCINT = scale(dfi$VPH_SINCINT),
+                        P12YM_SEPA = scale(dfi$P12YM_SEPA),
+                        #RVN_GOUV = scale(dfi$RVN_GOUV),
+                        #RVN_PARTICULIER = scale(dfi$RVN_PARTICULIER),
+                        LOG_PRECA = scale(dfi$LOG_PRECA)
+                        )
+
+### On calcul une matrice des distances
+# On affiche tous les résultats sous forme de matrice
+# Les valeurs sont arrondies 2 chiffres après la virgule
+matMultiCri <- as.matrix(round(dist(dfi_multi),2))
+
+# On affiche les résultats
+as.matrix(round(dist(dfi_multi),2))
+
+# Si 0 forte ressemblance si 9 faible ressemblance
+range(matMultiCri)
+
+#--------------- ACP ---------------#
+
+### SOCIODEMO ###
+
+ACPsd <- princomp(dfi_multi, cor = TRUE)
+
+summary(ACPsd)
+### /!\ récupérer pour tableur ###
+
+attributes(ACPsd)
+
+VarEx <- (ACPsd$sdev^2 / sum(ACPsd$sdev^2))*100
+
+plot(VarEx, xlab="Comp", ylab="% variance") 
+
+loadings(ACPsd)
+### /!\ récupérer pour tableur ###
+
+PC1 <- ACPsd$scores[,1] ; round(PC1, 2); range(round(PC1, 2))
+
+PC2 <- ACPsd$scores[,2] ; round(PC2, 2)
+
+range(PC1)
+range(PC2)
+
+## Verification
+cor(dfi_multi, PC1)
+### /!\ récupérer pour tableur ###
+cor(dfi_multi, PC2)
+### /!\ récupérer pour tableur ###
+
+#ACP
+res.dfi.pca <- PCA(dfi,
+                   quanti.sup=NULL,
+                   quali.sup=NULL,
+                   ncp = 6,
+                   scale.unit = TRUE,
+                   graph = TRUE)
+
+#la fonction Investigate fait un rapport des résultat de l'ACP sous format html stocké dans le wd
+Investigate(res.dfi.pca)
+
+ACP1 <- data.frame(mun,PC1)
+ACP2 <- data.frame(mun,PC2)
+
+
+write.csv(ACP1,
+          fileEncoding = "UTF-8",
+          row.names=F,
+          file = "sociodemo_ACP1.csv")
+
+write.csv(ACP2,
+          fileEncoding = "UTF-8",
+          row.names=F,
+          file = "sociodemo_ACP2.csv")
+
+#--------------- CAH APRES ACP ---------------#
+res.hcpc <- HCPC(res.dfi.pca, graph = FALSE)
+
+fviz_dend(res.hcpc, 
+          cex = 0.7,                     # Taille du text
+          palette = "jco",               # Palette de couleur ?ggpubr::ggpar
+          rect = TRUE, rect_fill = TRUE, # Rectangle autour des groupes
+          rect_border = "jco",           # Couleur du rectangle
+          labels_track_height = 0.8      # Augment l'espace pour le texte
+)
+?fviz_dend
+
+fviz_cluster(res.hcpc,
+             repel = TRUE,            # Evite le chevauchement des textes
+             show.clust.cent = TRUE, # Montre le centre des clusters
+             palette = "jco",         # Palette de couleurs, voir ?ggpubr::ggpar
+             ggtheme = theme_minimal(),
+             main = "Factor map"
+)
+
+# Principal components + tree
+plot(res.hcpc, choice = "3D.map")
+
+# On récupère les classes de la cah
+sociodemocah <- data.frame(res.hcpc$data.clust)
+#remet mun dedans
+sociodemocah <- rownames_to_column(sociodemocah, var = "mun") %>% as_tibble()
+
+#Justification du nombre de classes choisis
+res <- NbClust(dfi_multi, distance = "euclidean", min.nc = 2, max.nc = 8, method = "ward.D2",
+               index = "alllong")
+
+write.csv(sociodemocah,
+          fileEncoding = "UTF-8",
+          row.names=F,
+          file = "sociodemo_CAH.csv")
+
+#--------------- CAH ---------------#
+
+#ecntrée réduite
+dfscale <- scale(dfi)
+cahCSP <- agnes(dfscale, 
+                metric = "euclidean",
+                method = "ward")
+
+library(cluster)
+library(FactoClass)
+library(ade4)
+library(ggplot2)
+library(scales)
+library(reshape)
+###
+clusCSP <- cutree(cahCSP, k = 2)
+dfscale <- as.data.frame(dfscale)
+dfscale$CLUSCSP <- factor(clusCSP,
+                          levels = 1: 2,
+                          labels = paste("CLUS", 1: 2))
+
+
+clusProfile <- aggregate(dfscale,
+                         by = list(dfscale$CLUSCSP),
+                         mean)
+
+clusProfile <- subset(clusProfile, select = -c(CLUSCSP))
+
+#install.packages("FactoClass")
+colnames(clusProfile)[ 1] <- "CLUSTER"
+clusLong <- melt(clusProfile, id.vars = "CLUSTER")
+
+ggplot(clusLong) +
+  geom_bar(aes(x = variable, y = value, fill = CLUSTER),
+           stat = "identity") +
+  scale_fill_grey() +
+  facet_wrap(~ CLUSTER) +
+  coord_flip() + theme_bw()
