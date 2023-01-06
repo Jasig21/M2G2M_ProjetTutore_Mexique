@@ -878,3 +878,9 @@ h6 {
 .card-title{
   text-align: justify;
 }
+
+.card-text{
+  color: white !important;
+  text-align: justify;
+  font-size: 15px;
+}

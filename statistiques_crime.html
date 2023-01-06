@@ -168,20 +168,29 @@
       <br>
       <div class="row">
         <!-- Left side columns -->
-        <div class="col-lg-6">
+        <div class="col-lg-8">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
+              <h5 class="card-title">Corrélogramme des variables de criminalité</h5>
               <img src="assets/img/export stat/crime/bivarié/crime_corr.png" class="img-card" />
             </div>
           </div>
         </div>
 
         <!-- Right side columns -->
-        <div class="col-lg-6">
+        <div class="col-lg-4">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">analyse</h5>
+            <div class="card-body"><br>
+              <h6 class="card-text">Notre hypothèse est qu’il existe un lien entre les variables de criminalité sélectionnées.
+                Nous nous sommes appuyés, pour l’évaluation de la dépendance entre ces variables, sur une matrice de corrélation. Cette table contient les coefficients de corrélation entre les différentes paires possibles.
+                <br><br>
+                Nous avons ensuite représenté cette matrice par un corrélogramme, afin de mettre en évidence les variables les plus corrélées. Le coefficient de corrélation est compris entre -1 et 1, d’une corrélation négative vers une corrélation positive : 
+                les valeurs se rapprochant de 1 indiquent une forte corrélation entre les variables concernées. <br><br>
+
+                Le résultat, présenté ci-dessus, fait état de fortes corrélations positives entre les variables de criminalité. Celles-ci se situent pour la plupart entre 0.68 et 1. Les variables faiblement corrélées sont les variables de séquestration et de violence familiales avec les crimes de droits commun. 
+                Ces résultats restent dans l’ensemble assez prévisibles : on peut penser qu’un homicide comporte des blessures.
+
+                </h6>
             </div>
           </div>
         </div><!-- End Right side columns -->
@@ -193,9 +202,8 @@
       <div class="row">
         <!-- Left side columns -->
         <div class="col-lg-12">
-          <div class="card">
+          <div class="card"><br>
             <div class="card-body">
-              <h5 class="card-title">Table</h5>
               <table class="table table-dark">
                 <thead class="table-head">
                   <tr>
@@ -272,14 +280,24 @@
         <!-- Right side columns -->
         <div class="col-lg-12">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">analyse</h5>
+            <div class="card-body"><br>
+              <h6>La p-value est un indicateur du niveau de significativité d’une corrélation et nous permet de nous assurer du lien entre les corrélations observées.</h6>
+              <h6 class="card-text">Notre test de significativité est plutôt favorable : la p-value est, dans un tiers des cas inférieure à 0.05. 
+                Nos résultats sont donc très significatifs pour plusieurs variables :
+                -	Homicides et féminicides – Blessures<br>
+                -	Vol – Blessures<br>
+                -	Violences familiales – Crimes de droit commun<br>
+                -	Violences familiales – Séquestration<br>
+                -	Vol – Homicides et féminicides<br>
+                -	Vol – Homicides et féminicides<br>
+                </h6>
             </div>
           </div>
         </div><!-- End Right side columns -->
 
       </div>
     </section>
+    <br><br><br>
 
     <section class="section dashboard" id="acp">
       <h2>Analyse Multivariée</h2>
@@ -287,19 +305,24 @@
       <br>
       <div class="row">
         <!-- Left side columns -->
-        <div class="col-lg-7">
+       
+        <div class="col-lg-5">
+          <br><br><br>
+
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Analyse</h5>
+            <div class="card-body"><br>
+              <h6 class="card-text">Nous avons visé à travers cette analyse, à mettre en évidence une éventuelle explication de nos variables de criminalité par certaines composantes. Les faits criminels, fortement liés en bivarié se trouvent toujours proches les uns des autres dans notre résultat. Par ailleurs, toutes nos variables sont positives et proches de 1 sur le premier plan de notre ACP. L’analyse nous semble davantage permettre d’établir un gradient de la criminalité : 
+                à la fois plus ou moins forte, plus ou moins violente, présente ou non. <br><br>
+              </h6>
             </div>
           </div>
         </div>
 
         <!-- Right side columns -->
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
+              <h5 class="card-title">Cercle de corrélation ACP criminalité</h5>
               <img src="assets/img/export stat/crime/acp/crime_acp_axe.png" class="img-card" />
             </div>
           </div>
@@ -313,9 +336,8 @@
       <div class="row">
         <!-- Left side columns -->
         <div class="col-lg-12">
-          <div class="card">
+          <div class="card"><br>
             <div class="card-body">
-              <h5 class="card-title">Table</h5>
               <table class="table table-dark">
                 <thead class="table-head">
                   <tr>
@@ -392,8 +414,15 @@
         <!-- Right side columns -->
         <div class="col-lg-12">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">analyse</h5>
+            <div class="card-body"><br>
+              <h6 class="card-text">
+                Pour valider nos interprétations, nous calculons plusieurs autres paramètres.
+                Notamment la part que joue chacune des variables dans la constitution de nos 2 premiers axes. Ainsi, 
+                le 1er axe est composé de toutes nos variables de manière assez équitable, à l’exception des crimes de droit commun qui sont bien mieux représentés par l’axe 2 de l’ACP. 
+                Deuxième axe qui prend également mieux en compte les violences familiales, mais négativement (-0.575).<br><br>
+                On regarde également la part d’inertie des variables expliquées par nos deux premières composantes. Pour le premier axe, cette proportion est de 79.8%. Ce qui est largement suffisant pour représenter nos variables. 
+                Si l’on conserve nos deux premiers axes, cette proportion monte à 96%. <br><br>
+              </h6>
             </div>
           </div>
         </div><!-- End Right side columns -->
@@ -406,59 +435,37 @@
         <div class="col-lg-7">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
+              <h5 class="card-title">Nuage de points de l'ACP</h5>
               <img src="assets/img/export stat/crime/acp/crime_acp_var.png" class="img-card" />
             </div>
           </div>
         </div>
 
-        <!-- Right side columns -->
-        <div class="col-lg-5">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Analyse</h5>
-            </div>
-          </div>
-        </div><!-- End Right side columns -->
-      </div>
-    </section>
-
-
-    <section class="section dashboard">
-      <div class="row">
-        <!-- Left side columns -->
-        <div class="col-lg-7">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Analyse</h5>
-            </div>
+      <!-- Right side columns -->
+      <div class="col-lg-5">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Courbe de participation aux composantes de l'ACP </h5>
+            <img src="assets/img/export stat/crime/acp/crime_participation_acp.png" class="img-card" />
           </div>
         </div>
 
-        <!-- Right side columns -->
-        <div class="col-lg-5">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
-              <img src="assets/img/export stat/crime/acp/crime_participation_acp.png" class="img-card" />
-            </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-text">
+              <br>
+              Enfin, on observe la corrélation entre notre premier axe de l’ACP et chacune de nos variables de criminalité. 
+              Toutes sont corrélées, la plus basse de nos variables ayant une corrélation de 0.65 et les plus hautes de 0.99. <br><br>
+              Notre hypothèse de lien entre les variables de criminalité est donc vérifiée.
+              </h5>
           </div>
-        </div><!-- End Right side columns -->
-      </div>
+        </div>
+      </div><!-- End Right side columns -->
+    </div>
     </section>
-
 
     <section class="section dashboard">
       <div class="row">
-        <!-- Left side columns -->
-        <div class="col-lg-7">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Analyse</h5>
-            </div>
-          </div>
-        </div>
-
         <!-- Right side columns -->
         <div class="col-lg-5">
           <div class="card">
@@ -504,50 +511,26 @@
       </div>
     </section>
 
-
+    <br><br><br>
     <section class="section dashboard" id="cah">
       <h4>Classification ascendante hiérarchique</h4>
       <br>
       <div class="row">
         <!-- Left side columns -->
-        <div class="col-lg-7">
+        <div class="col-lg-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Analyse</h5>
+              <h5 class="card-title">Dendogramme</h5>
               <img src="assets/img/export stat/crime/cah/crime_dendogramme.png" class="img-card" />
             </div>
           </div>
         </div>
 
         <!-- Right side columns -->
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
-            </div>
-          </div>
-        </div><!-- End Right side columns -->
-
-      </div>
-    </section>
-
-
-    <section class="section dashboard">
-      <div class="row">
-        <!-- Left side columns -->
-        <div class="col-lg-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Analyse</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right side columns -->
-        <div class="col-lg-8">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
+              <h5 class="card-title">Sauts d'inertie de la CAH</h5>
               <img src="assets/img/export stat/crime/cah/crime_nbclust.png" class="img-card" />
             </div>
           </div>
@@ -560,10 +543,28 @@
     <section class="section dashboard">
       <div class="row">
         <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="card"><br>
+            <div class="card-body">
+              <h5 class="card-text">Nous avons ensuite procédé à une classification de nos données au moyen d’une Classification Ascendante Hiérarchique (CAH), appliquée aux résultats de l’ACP.<br>
+                Cette méthode produit un arbre de regroupement hiérarchique, propre à identifier des groupes d’individus présentant des traits communs.
+               </h5>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
         <div class="col-lg-7">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Analyse</h5>
+              <h5 class="card-title">Clusters de la CAH</h5>
               <img src="assets/img/export stat/crime/cah/crime_factor_map.png" class="img-card" />
             </div>
           </div>
@@ -571,9 +572,13 @@
 
         <!-- Right side columns -->
         <div class="col-lg-5">
-          <div class="card">
+          <br><br><br>
+          <div class="card"><br>
             <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
+              <h5 class="card-text">La combinaison de ces deux méthodes, ACP puis CAH, a consisté à :<br>
+                -	D’abord réduire les dimensions de notre jeu initial (son grand nombre de variables) au moyen d’une analyse factorielle : l’ACP;<br>
+                -	Ensuite, produire des groupes stables sur la base de ses résultats, avec une CAH.<br>
+                </h5>
             </div>
           </div>
         </div><!-- End Right side columns -->
@@ -587,8 +592,16 @@
         <!-- Left side columns -->
         <div class="col-lg-4">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Analyse</h5>
+            <div class="card-body"><br>
+              <h5 class="card-text">Nous obtenons donc 3 classes : <br><br>
+                -	CLUS 1 : <br>
+                  Représente des Municipes ayant une faible part de criminalité, et ce dans toutes les variables<br><br>
+                -	CLUS 2 : <br>
+                  Regroupe les Municipes présentant une forte proportion de criminalité, à l’exception des délits de droit commun (dc_phab)<br><br>
+                -	CLUS 3 :<br>
+                  Rassemble les Municipes comportant beaucoup de criminalité, avec une sous-représentation des violences domestiques (vf_phab) et des séquestrations (sec_phab)<br><br>
+                </h5>
+                <h5>Nous avons ensuite réalisé une <a href="cartotheque.html">cartographie</a> de cette analyse</h5>
             </div>
           </div>
         </div>
@@ -596,8 +609,7 @@
         <!-- Right side columns -->
         <div class="col-lg-8">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Schéma</h5>
+            <div class="card-body"><br>
               <img src="assets/img/export stat/crime/cah/crime_cah_cluster.png" class="img-card" />
             </div>
           </div>
